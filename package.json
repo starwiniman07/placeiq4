@@ -1,0 +1,16 @@
+{
+  "name": "place-iq-ecosystem",
+  "version": "1.0.0",
+  "description": "AI-Powered Placement Preparation Platform",
+  "scripts": {
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && npm start",
+    "ai-services": "cd ai-services && venv\\Scripts\\python -m uvicorn main:app --port 8000 --reload",
+    "proctoring": "cd proctoring && venv\\Scripts\\python -m uvicorn proctoring_service:app --port 8001 --reload",
+    "socket": "cd socket-server && node server.js",
+    "dev": "concurrently \"npm run frontend\" \"npm run backend\" \"npm run ai-services\" \"npm run proctoring\" \"npm run socket\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
